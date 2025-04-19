@@ -5,6 +5,7 @@
     width: 100vw;
     z-index: 999;
     display: flex;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   
   .headerChildDiv {
