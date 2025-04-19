@@ -2,20 +2,20 @@ import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import Subnavbar from '../../components/SubNavbar/Subnavbar'
-import Products from '../../components/ProdectsCard/Products'
+import SingleProduct from '../../components/SingleProduct/SingleProduct'
 
-function Home() {
+function ProductPage() {
   return (
     <div>
-      {/* <Navbar />
-      <div  style={{ paddingTop: '70px' }}>      
+        <Navbar />
+        <div  style={{ paddingTop: '70px' }}>
         <Subnavbar />
-      <Products />
+        <SingleProduct />
         <Footer />
-        </div> */}
-
+        </div>
+      
     </div>
   )
 }
 
-export default Home
+export default ProductPage
