@@ -17,7 +17,6 @@ function Products() {
           </div>
               <div className='image'>
                 <OlxLogo />
-                <img src="" alt="" />
               </div>
           <div className='content'> 
             <p className='rate'>5000</p>

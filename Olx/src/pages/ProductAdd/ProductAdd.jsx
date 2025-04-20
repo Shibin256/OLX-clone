@@ -1,9 +1,12 @@
 import React from 'react'
 import './ProductAdd.css'
 import Olxlogo from '../../assets/OlxLogo'
+import Navbar from '../../components/Navbar/Navbar'
 
 function ProductAdd() {
   return (
+    <>    
+    <Navbar />
     <div className='login'>
     <div className='inner-login'> 
 
@@ -42,6 +45,8 @@ function ProductAdd() {
     </div>
     </div>
   </div>
+    </>
+
   )
 }
 

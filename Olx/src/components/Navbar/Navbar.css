@@ -92,6 +92,7 @@
     text-overflow: ellipsis;
     font-weight: bolder;
     margin-right: 5px;
+    cursor: pointer;
   }
   
   .span {
@@ -117,7 +118,7 @@
     text-decoration: none;
   }
   
-  .loginPage span{
+  .loginPage h3{
     cursor: pointer;
   }
   

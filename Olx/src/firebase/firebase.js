@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut} from 'firebase/auth'
 import {addDoc,collection, getFirestore} from 'firebase/firestore'
+import {getStorage} from 'firebase/storage'                     //importing items to upload image in firebase
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBoC23Lku7pmisK1Lz2gphdjBWgu2pIvrw",
@@ -15,6 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)   //firebase authonication configured
 const db= getFirestore(app) // firebase database getting
+const imageDb=getStorage(app)           //for image uploading
 
 const signUp= async (name,email,phone,password)=>{
         try {

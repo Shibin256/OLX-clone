@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import OlxLogo from "../../assets/OlxLogo";
 import Search from "../../assets/Search";
@@ -6,6 +7,7 @@ import Arrow from "../../assets/Arrow";
 import SellButton from "../../assets/SellButton";
 import SellButtonPlus from "../../assets/SellButtonPlus";
 import Heart from "../../assets/Heart"
+import { logout } from "../../firebase/firebase";
 
 const Navbar = () => {
   return (
@@ -13,7 +15,9 @@ const Navbar = () => {
       <div className="headerChildDiv">
    
         <div className="brandName">
+            <Link to={'/'}>
             <OlxLogo />
+              </Link>
         </div>
    
         <div className="placeSearch">
@@ -45,14 +49,14 @@ const Navbar = () => {
         </div>
         
         <div className="loginPage">
-         <h3>Logout</h3>
+         <h3 onClick={()=>logout()}>Logout</h3>
         </div>
         
           <div className="sellMenu">
           <SellButton />
           <div className="sellMenuContent">
             <SellButtonPlus />
-            <span>SELL</span>
+            <Link to='productAdd'>SELL</Link>
           </div>
           </div>
       
