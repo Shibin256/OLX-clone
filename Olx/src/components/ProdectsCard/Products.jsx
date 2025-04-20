@@ -4,6 +4,7 @@ import Heart from '../../assets/Heart'
 import OlxLogo from '../../assets/OlxLogo'
 import { db } from "../../firebase/firebase";
 import { collection, getDocs } from 'firebase/firestore'
+import { Link } from 'react-router-dom';
 
 function Products() {
   const [olxProducts, setProducts] = useState([])
@@ -36,7 +37,9 @@ function Products() {
           <p>No products available</p>
         ) : (
           olxProducts.map((product) => (
-            <div className='card' key={product.id}>
+            
+            <Link to={`/productPage/${product.id}`} key={product.id}>
+            <div className='card'>
               <div className='favorate'>
                 <Heart />
               </div>
@@ -52,6 +55,7 @@ function Products() {
                 <p>10/12/2025</p>
               </div>
             </div>
+            </Link>
           ))
         )}
       </div>
