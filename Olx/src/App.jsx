@@ -7,6 +7,8 @@ import Login from './pages/Login/Login'
 import { useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase/firebase'
+import { ToastContainer, toast } from 'react-toastify';
+import ContextProvider from './context/ContextProvider'
 
 function App() {
   const navigate=useNavigate();
@@ -24,15 +26,15 @@ function App() {
   },[])
 
   return (
-    <>
+    <ContextProvider>
+    <ToastContainer theme='dark' />
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/login' element={<Login />} />
       <Route path='/productAdd' element={<ProductAdd />} />
       <Route path='/productPage/:id' element={<ProductPage />} />
-
     </Routes>
-    </>
+    </ContextProvider>
   )
 }
 

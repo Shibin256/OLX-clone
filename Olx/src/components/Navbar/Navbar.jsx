@@ -8,8 +8,10 @@ import SellButton from "../../assets/SellButton";
 import SellButtonPlus from "../../assets/SellButtonPlus";
 import Heart from "../../assets/Heart"
 import { logout } from "../../firebase/firebase";
+import MyContext from "../../context/Mycontext";
 
 const Navbar = () => {
+  const {logState}=useContext(MyContext)
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
@@ -49,7 +51,8 @@ const Navbar = () => {
         </div>
         
         <div className="loginPage">
-         <h3 onClick={()=>logout()}>Logout</h3>
+         <h3 onClick={()=>logout()}>{logState ? logState : "Login"}</h3>
+         <hr />
         </div>
         
           <div className="sellMenu">
