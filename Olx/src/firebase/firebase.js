@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut} from 'firebase/auth'
 import {addDoc,collection, getFirestore} from 'firebase/firestore'
 import {getStorage} from 'firebase/storage'                     //importing items to upload image in firebase
+import { toast } from "react-toastify";
 
 
 const firebaseConfig = {
@@ -31,10 +32,10 @@ const signUp= async (name,email,phone,password)=>{
                 authProvider:'local',
             })
             console.log("New User Signed in");
-            alert("SignUp Successfull")
+            toast.success("SignUp Successful");
         } catch (error) {
                 console.log(error);
-                alert(error)
+                toast.error(error.code.split('/')[1].split('-').join(' '))
         }
 }
 
@@ -42,15 +43,16 @@ const signUp= async (name,email,phone,password)=>{
 const login= async (email,password)=>{
         try {
             await signInWithEmailAndPassword(auth,email,password);
-            alert("SignIn Successfull")
+            toast.success("SignIn Successfull")
         } catch (error) {
+            toast.error(error.code.split('/')[1].split('-').join(' '))
             console.log(error)
         }
 }
 
 const logout=()=>{
     signOut(auth)
-    alert('Logout Successfull')
+    toast.success('Logout Successfull')
 }
 
 
@@ -59,10 +61,10 @@ const addProduct= async (product)=>{
        const res= await addDoc(collection(db,'products'),product)
         console.log(product)
         console.log("Product added with ID:", res.id);
-        alert("product added")
+        toast.success("Product added successfully")
     }catch (error) {
         console.log(error);
-        alert(error)
+        toast.error(error.code.split('/')[1].split('-').join(' '))
     }
 }
 
