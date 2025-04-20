@@ -8,13 +8,12 @@ import Login from '../Login/Login'
 function ProductPage() {
   return (
     <div>
-        <Login />
-        {/* <Navbar />
+        <Navbar />
         <div  style={{ paddingTop: '70px' }}>
         <Subnavbar />
         <SingleProduct />
         <Footer />
-        </div> */}
+        </div>
       
     </div>
   )

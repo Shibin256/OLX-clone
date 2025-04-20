@@ -22,7 +22,7 @@
     padding: 13px;
     max-width: 222px;
     width: 222px;
-    height: 270px;
+    height: 100%;
     display: inline-block;
     cursor: pointer;
     color: black;
@@ -44,7 +44,7 @@
     align-items: center;
   }
   
-  .card .image img {
+  .card .image  {
     height: 100px;
     max-width: 100%;
     max-height: 100%;

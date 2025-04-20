@@ -1,10 +1,23 @@
 import React, { useState } from 'react'
 import './Login.css'
 import Olxlogo from '../../assets/OlxLogo'
+import { login, signUp } from '../../firebase/firebase'
 
 function Login() {
 
   const [signState,setSignState]=useState('Sign Up')
+  const [name,setName]=useState("")
+  const [email,setEmail]=useState("");
+  const [password,setPassword]=useState("");
+  const [phone,setPhone]=useState("")
+  const userauth=async (e)=>{
+    e.preventDefault()
+    if(signState=='Sign In'){
+      await login(email,password)
+    }else{
+      await signUp(name,  email, phone, password)
+    }
+  }
 
   return (
     <div className='login'>
@@ -16,24 +29,37 @@ function Login() {
 
       <div className='loginform'>
         <form>
+          
           {signState =="Sign Up" && <div className='formGroup'>
-          <label htmlFor="">username:</label>
-          <input type="text" />
+          <label>username:</label> 
+          <input value={name}                               //value{} - It connects the input field to the component's state.
+          onChange={(e)=>setName(e.target.value)}
+           type="text" id='name' />
           </div>}
+            
             <div className='formGroup'>
-            <label htmlFor="">Email:</label>
-            <input type="text" />
+            <label>Email:</label>
+            <input value={email} 
+            onChange={(e)=>{setEmail(e.target.value)}}
+             type="email" id='email' />
             </div>
+
             {signState =="Sign Up" &&
             <div className='formGroup'>
-            <label htmlFor="">phone:</label>
-            <input type="text" />
+            <label >phone:</label>
+            <input value={phone} 
+            onChange={(e)=>{setPhone(e.target.value)}}
+            type="number" id='phone' />
             </div>}
+
             <div className='formGroup'>
-            <label htmlFor="">password:</label>
-            <input type="text" />
+            <label >password:</label>
+            <input value={password} 
+            onChange={(e)=>{setPassword(e.target.value)}}
+            type="password" id='password' />
             </div>
-            <button type='submit' className='signupBtn'>{signState}</button>
+
+            <button type='submit' onClick={userauth} className='signupBtn'>{signState}</button>
         </form>
         <div className='forms-switch'>
           {signState=="Sign Up"? 

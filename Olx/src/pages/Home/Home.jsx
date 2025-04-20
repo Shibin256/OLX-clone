@@ -7,12 +7,12 @@ import Products from '../../components/ProdectsCard/Products'
 function Home() {
   return (
     <div>
-      {/* <Navbar />
+      <Navbar />
       <div  style={{ paddingTop: '70px' }}>      
         <Subnavbar />
       <Products />
         <Footer />
-        </div> */}
+        </div>
 
     </div>
   )
