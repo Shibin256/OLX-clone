@@ -53,4 +53,17 @@ const logout=()=>{
     alert('Logout Successfull')
 }
 
-export {auth,db,login,signUp,logout};
+
+const addProduct= async (product)=>{
+    try{
+       const res= await addDoc(collection(db,'products'),product)
+        console.log(product)
+        console.log("Product added with ID:", res.id);
+        alert("product added")
+    }catch (error) {
+        console.log(error);
+        alert(error)
+    }
+}
+
+export {auth,db,login,signUp,logout,imageDb,addProduct};

@@ -61,6 +61,11 @@
   .signupBtn:hover {
     background-color: #212529;
   }
-  
 
+  .imagePreview{
+    vertical-align: middle;
+      width: 190px;
+      height: 210px;
+  }
+  
 
