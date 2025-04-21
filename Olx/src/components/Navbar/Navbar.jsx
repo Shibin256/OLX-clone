@@ -51,18 +51,21 @@ const Navbar = () => {
         </div>
         
         <div className="loginPage">
-         <h3 onClick={()=>logout()}>{logState ? logState : "Login"}</h3>
+         <span onClick={()=>logout()}>{logState ? logState : "Login"}</span>
          <hr />
         </div>
         
+        
           <div className="sellMenu">
+            <Link to={'/productAdd'} >
           <SellButton />
           <div className="sellMenuContent">
             <SellButtonPlus />
-            <Link to='productAdd'>SELL</Link>
+            <span>SELL</span>
           </div>
-          </div>
-      
+          </Link>
+                   </div>
+
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ const signUp= async (name,email,phone,password)=>{
 const login= async (email,password)=>{
         try {
             await signInWithEmailAndPassword(auth,email,password);
-            toast.success("SignIn Successfull")
+            toast.success("Login Successfull")
         } catch (error) {
             toast.error(error.code.split('/')[1].split('-').join(' '))
             console.log(error)

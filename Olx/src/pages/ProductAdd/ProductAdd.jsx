@@ -77,7 +77,7 @@ function ProductAdd() {
   return (
     <>    
     <Navbar />
-    <div className='login'>
+    <div className='login' style={{ paddingTop: '70px' }}>
     <div className='inner-login'> 
 
     <div className='logo'>
