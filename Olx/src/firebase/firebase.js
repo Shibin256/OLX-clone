@@ -6,13 +6,14 @@ import { toast } from "react-toastify";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBoC23Lku7pmisK1Lz2gphdjBWgu2pIvrw",
-  authDomain: "olx-clone-9081a.firebaseapp.com",
-  projectId: "olx-clone-9081a",
-  storageBucket: "olx-clone-9081a.firebasestorage.app",
-  messagingSenderId: "1024603789435",
-  appId: "1:1024603789435:web:64d61f4cce8d8f11b92ade"
-};
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  };
+  
 
 
 const app = initializeApp(firebaseConfig);
@@ -54,7 +55,6 @@ const logout=()=>{
     signOut(auth)
     toast.success('Logout Successfull')
 }
-
 
 const addProduct= async (product)=>{
     try{

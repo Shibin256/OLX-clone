@@ -79,7 +79,6 @@ function ProductAdd() {
     <Navbar />
     <div className='login' style={{ paddingTop: '70px' }}>
     <div className='inner-login'> 
-
     <div className='logo'>
         <Olxlogo />
     </div>

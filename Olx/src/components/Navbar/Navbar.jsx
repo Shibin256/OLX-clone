@@ -11,7 +11,8 @@ import { logout } from "../../firebase/firebase";
 import MyContext from "../../context/Mycontext";
 
 const Navbar = () => {
-  const {logState}=useContext(MyContext)
+  const {logState,name}=useContext(MyContext)
+  
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
@@ -26,7 +27,7 @@ const Navbar = () => {
           <Search />
           <input type="text" />
           <Arrow />
-        </div>
+        </div> 
 
         <div className="productSearch">
           <div className="input">
@@ -35,6 +36,8 @@ const Navbar = () => {
               placeholder="Find car,mobile phone and more..."
             />
           </div>
+          
+          
 
           <div className="searchAction">
             <Search color="#ffffff"></Search>
