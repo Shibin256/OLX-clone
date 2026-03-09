@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './SingleProduct.css'
 import { doc, getDoc } from 'firebase/firestore';
 import { useParams } from 'react-router-dom'
 import { db } from '../../firebase/firebase';
+import MyContext from '../../context/Mycontext';
 
 function SingleProduct() {
     const {id}=useParams();
-
+    const {name}=useContext(MyContext)
     const [product, setProduct] = useState(null);
 
     const fetchProductDetails= async ()=>{
@@ -43,7 +44,7 @@ function SingleProduct() {
                 </div>
                 <div className='seller-deatials'>
                 <p>Seller details</p>
-                <p>No name</p>
+                <p>{name}</p>
                 <p>1234567890</p>
                 </div>
             </div>
